@@ -1,0 +1,17 @@
+{
+    "contents" : "cachemean <- function(x, ...) {\n  m <- x$getmean()\n  if(!is.null(m)) {\n    message(\"getting cached data\")\n    return(m)\n  }\n  data <- x$get()\n  m <- mean(data, ...)\n  x$setmean(m)\n  m\n}",
+    "created" : 1406482717734.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "916203274",
+    "id" : "1DD7E677",
+    "lastKnownWriteTime" : 7954830332566446090,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

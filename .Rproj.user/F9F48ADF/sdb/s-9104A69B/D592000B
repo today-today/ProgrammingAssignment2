@@ -1,0 +1,16 @@
+{
+    "contents" : "## Those two functions could help to reduce the time \n## used to calculate the inverse of a special matrix.\n\n## This function is used to make a special matrix and \n##store its vallue.\n\nmakeCacheMatrix <- function(x = matrix()) {\n  s<-NULL\n  set <- function(y) {\n    x <<- y\n    s <<- NULL\n  }\n  get <- function() x\n  setsolve <- function(solve) i <<- solve\n  getsolve <- function() s\n  list(set = set, get = get,\n       setsolve = setsolve,\n       getsolve = getsolve)\n\n}\n\n\n## This function is used to test the matrix\n## is soleved or not and return the solve.\n## If it has been solved, its inverse will be \n## returned directly. If not, it will be calculated.\n\ncacheSolve <- function(x, ...) {\n  s <- x$getsolve()\n  if(!is.null(s)) {\n    message(\"getting cached data\")\n    return(s)\n  }\n  data <- x$get()\n  s <- solve(data, ...)\n  x$setsolve(s)\n  s\n## Return a matrix that is the inverse of 'x'\n}\n",
+    "created" : 1406480811914.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1571578331",
+    "id" : "D592000B",
+    "lastKnownWriteTime" : 1406485454,
+    "path" : "C:/Users/smartyan/localrepo/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

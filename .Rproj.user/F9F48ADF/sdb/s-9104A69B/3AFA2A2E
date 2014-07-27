@@ -1,0 +1,17 @@
+{
+    "contents" : "Guess <- function(max) {\n  secret.number <- sample(1:max, 1)\n  total.guesses <- 1\n  finished <- FALSE\n  \n  message(sprintf(\"I'm thinking of a number from 1 to %d.\", max))\n  \n  self.list <- list(\n    get.info = function() {\n      message(\n        sprintf(\n          \"You %s guessed the number!\", \n          if (finished) \"have already\"\n          else \"still haven't\"\n        )\n      )\n      message(sprintf(\"Guess number: %d\", total.guesses))\n      message(sprintf(\"The number is taken from 1 to %d.\", max))\n    },\n    get.clues = function(guess) {\n      if (finished) message(\"You've already guessed my number!\")\n      else {\n        if (guess == secret.number) {\n          message(\"Congratulations!\")\n          message(sprintf(\"You got it in %d guesses!\", total.guesses))\n          finished <<- TRUE\n        } else {\n          if (secret.number < guess) message(\"Too high!\")\n          else message(\"Too low!\")\n          total.guesses <<- total.guesses + 1\n        }\n      }\n    }\n  )\n  \n  class(self.list) <- \"Guess\"\n  self.list\n}",
+    "created" : 1406481113582.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3767648205",
+    "id" : "3AFA2A2E",
+    "lastKnownWriteTime" : 1406481201,
+    "path" : "C:/Users/smartyan/localrepo/ProgrammingAssignment2/guess.R",
+    "project_path" : "guess.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
